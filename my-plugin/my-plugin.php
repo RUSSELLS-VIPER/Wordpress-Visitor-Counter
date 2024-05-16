@@ -15,45 +15,6 @@ function visitor_counter_activation()
     add_option('visitor_ips', array());
 }
 
-// Increment the visitor count
-// add_action('init', 'visitor_counter_increment');
-// function visitor_counter_increment()
-// {
-//     if (!is_admin()) {
-//         $is_bot = false;
-//         if (isset($_SERVER['HTTP_USER_AGENT'])) {
-//             $user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
-//             $bots = array('bot', 'crawler', 'spider', 'slurp', 'yahoo');
-//             foreach ($bots as $bot) {
-//                 if (strpos($user_agent, $bot) !== false) {
-//                     $is_bot = true;
-//                     break;
-//                 }
-//             }
-//         }
-
-//         if (!$is_bot) {
-//             $visitor_count = get_option('visitor_count');
-//             $visitor_count++;
-//             update_option('visitor_count', $visitor_count);
-
-//             // Ensure visitor_ips is an array
-//             $visitor_ips = get_option('visitor_ips');
-//             if (!is_array($visitor_ips)) {
-//                 $visitor_ips = array();
-//             }
-
-//             $visitor_ip = $_SERVER['REMOTE_ADDR'];
-
-//             // Check if the visitor is unique based on IP address
-//             if (!in_array($visitor_ip, $visitor_ips)) {
-//                 $visitor_ips[] = $visitor_ip;
-//                 update_option('visitor_ips', $visitor_ips);
-//             }
-//         }
-//     }
-// }
-
 
 
 add_action('init', 'visitor_counter_increment');
@@ -153,7 +114,7 @@ function visitor_counter_page()
     //     echo '<meta http-equiv="refresh" content="0">';
     // }
 
-    // Add custom CSS for better styling
+   
     echo '<style>';
     echo '.visitor-counter-wrap {';
     echo '  max-width: 400px;';
